@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stake Meteor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Stake Meteor</div>
+      <div class="status" id="statusText">Place your bet and launch!</div>
+    </header>
+
+    <main class="play">
+      <canvas id="gameCanvas" width="1100" height="680" aria-label="Meteor game"></canvas>
+
+      <section class="panel">
+        <div class="panel-card">
+          <label class="label" for="betAmount">Bet Amount</label>
+          <div class="row">
+            <input id="betAmount" type="number" min="1" step="1" value="10" />
+            <button id="launchBtn">Launch</button>
+          </div>
+          <div class="hint">Press launch when the cursor hits the zone you want.</div>
+        </div>
+
+        <div class="panel-card">
+          <div class="label">Cursor Power</div>
+          <div class="meter">
+            <div class="meter-track"></div>
+            <div class="meter-cursor" id="meterCursor"></div>
+          </div>
+          <div class="hint">Left = straighter drop, Right = diagonal curve.</div>
+        </div>
+
+        <div class="panel-card">
+          <div class="label">Outcome</div>
+          <div class="stats">
+            <div>Current Bet: <span id="betValue">10</span></div>
+            <div>Shields: <span id="shieldValue">0</span></div>
+            <div>Size: <span id="sizeValue">1.0</span>x</div>
+            <div>Result: <span id="resultValue">-</span></div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="label">Legend</div>
+          <div class="legend">
+            <div><span class="dot missile"></span> Missile (½ bet)</div>
+            <div><span class="dot shield"></span> Shield (+1)</div>
+            <div><span class="dot multiplier"></span> Multiplier zone</div>
+            <div><span class="dot water"></span> Water (lose)</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
